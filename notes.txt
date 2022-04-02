@@ -1,0 +1,37 @@
+Request -> Servlet [Database Communication + Business Logic]
+					
+		[Form-Fill]
+
+		Form-Fill 
+				field empty
+				Pincode
+Servlet :
+		init
+		service
+		destroy 
+		
+Website [Application]
+To do a Validation we have concept of Filter
+
+	Validation : 		
+			Client Side [Angular HTML5]:
+					HTML5
+					<input type="text" max=50 pattern min 
+					<input type="number" max min
+			Server Side [Validation]
+			
+	Filter acts a Pre-processer
+	
+	Load on server will be reduced
+	500 request
+		1 init
+		500 service
+		1 destroy
+	Preprocess : ValidationClass
+		ValidationClass -> Inputs validate 
+		
+Text
+Number
+Password
+Date
+Email
