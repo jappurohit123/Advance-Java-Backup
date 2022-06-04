@@ -35,3 +35,27 @@ Number
 Password
 Date
 Email
+
+MVC:
+
+	Model : Data bind (Bean)
+	View  : JSP
+	Controller : Servlet,Dao
+Filter : Interface (javax.servlet.Filter)
+Implements
+
+	Servlet :
+		init
+		service
+		destroy
+		
+	Filter [Lifecyle of Filter]:
+		init
+		doFilter
+		destroy
+		
+		
+		
+		
+	
+		

@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 public class ValidationClass {
 	// request.getParameter("")
-	@SuppressWarnings("null")
 	public static boolean textValidation(String input) {
 		// blank " a   " 
 		// null
