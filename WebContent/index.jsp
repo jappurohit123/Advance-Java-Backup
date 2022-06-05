@@ -7,7 +7,7 @@
 <title>Home</title>
 </head>
 <body>
-<h1>Home Page</h1>
+<h1>Add User Page</h1>
 <form action="signup" method="post">
 <!-- HTML5 
 		required 
@@ -45,5 +45,7 @@ EL Tag : $  : Display
 
 
 </form>
+<br>
+	<a href="home.jsp">Home</a>
 </body>
 </html>

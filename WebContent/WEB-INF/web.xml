@@ -2,12 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>AdvJavaBackup</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>SignUpController</servlet-name>
@@ -17,6 +12,16 @@
     <servlet-name>SignUpController</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.controller.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+
   <filter>
     <display-name>SignUpFilter</display-name>
     <filter-name>SignUpFilter</filter-name>
@@ -24,6 +29,15 @@
   </filter>
   <filter-mapping>
     <filter-name>SignUpFilter</filter-name>
+    <url-pattern>/signup</url-pattern>
+  </filter-mapping>
+  <filter>
+    <display-name>DuplicateEmailChecker</display-name>
+    <filter-name>DuplicateEmailChecker</filter-name>
+    <filter-class>com.filter.DuplicateEmailChecker</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>DuplicateEmailChecker</filter-name>
     <url-pattern>/signup</url-pattern>
   </filter-mapping>
 </web-app>

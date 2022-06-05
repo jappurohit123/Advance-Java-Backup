@@ -43,7 +43,6 @@ MVC:
 	Controller : Servlet,Dao
 Filter : Interface (javax.servlet.Filter)
 Implements
-
 	Servlet :
 		init
 		service
@@ -53,9 +52,24 @@ Implements
 		init
 		doFilter
 		destroy
-		
-		
-		
+	1. Order of execution of filters (multiple filters)is decided based on the 
+		entry of <filter-mapping> and <filter> done in the web.xml.
+	2. In web.xml will do the following entry for mapping the filter:
+		<filter>
+			<display-name>SignUpFilter</display-name>
+			<filter-name>SignUpFilter</filter-name>
+			<filter-class>com.filter.SignUpFilter</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>SignUpFilter</filter-name>
+			<url-pattern>/signup</url-pattern>
+		</filter-mapping>
+	3. 	
+
+Websites [Educational Website][File]:
+	1. Course available		
+	2. Schedules
+	3. Faculties				
 		
 	
 		

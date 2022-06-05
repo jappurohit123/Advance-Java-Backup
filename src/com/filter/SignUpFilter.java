@@ -35,7 +35,7 @@ public class SignUpFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("In filter");
+		System.out.println("In Signup filter");
 		String emailID = request.getParameter("emailID");		
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
