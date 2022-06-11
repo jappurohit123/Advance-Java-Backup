@@ -15,6 +15,14 @@
   <servlet>
     <servlet-name>LoginController</servlet-name>
     <servlet-class>com.controller.LoginController</servlet-class>
+    <init-param>
+    	<param-name>emailID</param-name>
+    	<param-value>pjap041@gmail.com</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>password</param-name>
+    	<param-value>jappurohit</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
@@ -40,4 +48,8 @@
     <filter-name>DuplicateEmailChecker</filter-name>
     <url-pattern>/signup</url-pattern>
   </filter-mapping>
+  <context-param>
+  	<param-name>name</param-name>
+  	<param-value>Jap</param-value>
+  </context-param>
 </web-app>

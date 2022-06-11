@@ -65,11 +65,38 @@ Implements
 			<url-pattern>/signup</url-pattern>
 		</filter-mapping>
 	3. 	
-
 Websites [Educational Website][File]:
 	1. Course available		
 	2. Schedules
 	3. Faculties				
-		
+
+So, whenever we want to store data without the help of database we can store it in web.xml and 
+there are two approaches 
+1. ServletConfig [Interface] : Scope is for particular servlet
+	We can iterate over parameters, get the parameters value. [R]
+2. ServletContext [Interface] : Scope is for whole application
+	We can iterate over parameters, get the parameters value, remove the parameter, set the parameters [CRUD]
+MNC : Procedures, Functions, etc.
+
+Error Tracking
+1. Database Track [RDMS] : [Functions, Procedure] 
+2. Application 
+
+Listener : Someone who tracks the events happening at server level is managed or rather listened by listener.
+1. Request Listener	
+	ServletRequest : To track down create and deletion of a request
+	ServletAttributeRequest : To track attribute properties updation, deletion on a request
+2. Context Listener
+	ContextRequest
 	
+3. Session Listener
+	SessionListener 
+	Session
+Why Listener ?
+	1. Error Tracking
+	2. User Tracking
+	3. Server Information Tracking
+
+
+Storage 
 		

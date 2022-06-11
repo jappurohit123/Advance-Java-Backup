@@ -9,6 +9,7 @@
 <body>
 	<h1>Home Page</h1>
 	<h2>${message }</h2>
+	<h2>${name}</h2>
 	<a href="index.jsp">Add User</a> | <a href="list.jsp">List Users</a>
 </body>
 </html>
