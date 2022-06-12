@@ -97,6 +97,8 @@ Why Listener ?
 	2. User Tracking
 	3. Server Information Tracking
 
-
+Whenever we want to execute a select query  : executeQuery
+Manipulation : executeUpdate
+execute
 Storage 
 		

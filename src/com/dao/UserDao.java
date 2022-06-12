@@ -3,6 +3,8 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.bean.UserBean;
 import com.util.JDBCConnectionClassMySQL;
@@ -47,6 +49,28 @@ public class UserDao {
 		}
 		return flag;
 	}
+	public static List<UserBean> getAllUsers(){
+		List<UserBean> users = new ArrayList<UserBean>();
+		try(Connection con = JDBCConnectionClassMySQL.getConnection();
+				PreparedStatement psmt = con.prepareStatement("select * from usertable");
+				){
+			
+			ResultSet rs = psmt.executeQuery();
+			while(rs.next()) {
+				UserBean u = new UserBean();
+				u.setEmailID(rs.getString("emailid"));
+				u.setFirstName(rs.getString("firstname"));
+				u.setLastName(rs.getString("lastname"));
+				u.setUserID(rs.getInt("userid"));
+				u.setPassword(rs.getString("password"));
+				users.add(u);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return users;
+	}
 	public static boolean duplicateEmailChecker(String emailID) {
 		boolean flag = false;
 		try(Connection conn = JDBCConnectionClassMySQL.getConnection();
@@ -84,6 +108,22 @@ public class UserDao {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+		}
+		return flag;
+	}
+	public static boolean deleteUser(int userID) {
+		boolean flag = true;
+		try(Connection con = JDBCConnectionClassMySQL.getConnection();
+			PreparedStatement psmt = con.prepareStatement("delete from usertable where userid = ?");	
+			){
+			psmt.setInt(1, userID);
+			int num = psmt.executeUpdate();
+			if(num!=1) {
+				flag = false;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			flag = false;
 		}
 		return flag;
 	}

@@ -4,6 +4,9 @@
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
+  <listener>
+    <listener-class>com.listener.ServerRequestListner</listener-class>
+  </listener>
   <servlet>
     <servlet-name>SignUpController</servlet-name>
     <servlet-class>com.controller.SignUpController</servlet-class>
@@ -16,20 +19,18 @@
     <servlet-name>LoginController</servlet-name>
     <servlet-class>com.controller.LoginController</servlet-class>
     <init-param>
-    	<param-name>emailID</param-name>
-    	<param-value>pjap041@gmail.com</param-value>
+      <param-name>emailID</param-name>
+      <param-value>pjap041@gmail.com</param-value>
     </init-param>
     <init-param>
-    	<param-name>password</param-name>
-    	<param-value>jappurohit</param-value>
+      <param-name>password</param-name>
+      <param-value>jappurohit</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-
-
   <filter>
     <display-name>SignUpFilter</display-name>
     <filter-name>SignUpFilter</filter-name>
@@ -49,7 +50,30 @@
     <url-pattern>/signup</url-pattern>
   </filter-mapping>
   <context-param>
-  	<param-name>name</param-name>
-  	<param-value>Jap</param-value>
+    <param-name>name</param-name>
+    <param-value>Jap</param-value>
   </context-param>
+  <listener>
+    <listener-class>com.listener.ServerRequestAttributeBindingListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>ListAllUsersController</display-name>
+    <servlet-name>ListAllUsersController</servlet-name>
+    <servlet-class>com.controller.ListAllUsersController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListAllUsersController</servlet-name>
+    <url-pattern>/listAllUsers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteUserServlet</display-name>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <servlet-class>com.controller.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <url-pattern>/deleteUser</url-pattern>
+  </servlet-mapping>
 </web-app>

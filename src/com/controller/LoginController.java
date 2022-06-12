@@ -42,7 +42,11 @@ public class LoginController extends HttpServlet{
 			request.setAttribute("message", "Login Successfully");
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}else {
+			
 			request.setAttribute("emailID", emailID);
+			request.removeAttribute("emailID");
+			request.setAttribute("emailID", emailID);
+			request.setAttribute("emailID", "pj");
 			request.setAttribute("message", "Invalid Credentials");
 			request.getRequestDispatcher("login.jsp").forward(request, response);	
 		}
